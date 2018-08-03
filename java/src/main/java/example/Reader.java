@@ -45,7 +45,9 @@ public class Reader implements Runnable {
                         e.printStackTrace();
                     }
                 } else {
-                    parseLine(line);
+                    if (parser != null) {
+                        parser.parseLine(line);
+                    }
                 }
             }
             

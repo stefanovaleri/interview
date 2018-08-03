@@ -3,15 +3,15 @@
 #
 users=("Pippo" "Pluto" "Paperino" "Minnie" "Paperina")
 
-for i in {1..10}
+for i in {1..500}
 do
     time=`date +%s`
 
-    randomIndex=`echo $RANDOM % 5 | bc`
+    randomIndex=$(($RANDOM % 5))
     user=${users[$randomIndex]}
 
-    randomValue=`echo "scale=5; $RANDOM/1000" | bc`
+    value=`echo "scale=2; $RANDOM/1000" | bc`
     
-    echo $i $time $user $randomValue
-    sleep 1
+    echo $i $time $user $value
+    sleep $randomIndex
 done
